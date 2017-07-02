@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Fetching data</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1>People Info</h1>
+
+    <table style="width:100%">
+      <thead>
+      <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Username</th>
+        <th>Email</th>
+        <th>City</th>
+        <th>Zip code</th>
+        <th>Latitude</th>
+        <th>Longitude</th>
+        <th>Website</th>
+      </tr>
+      </thead>
+      <tbody>
+      <% for (key of jsonObject) {%>
+
+      <tr>
+        <th><%= key.id %></th>
+        <th><%= key.name %></th>
+        <th><%= key.username %></th>
+        <th><%= key.email %></th>
+        <th><%= key.address.city %></th>
+        <th><%= key.address.zipcode %></th>
+        <th><%= key.address.geo.lat %></th>
+        <th><%= key.address.geo.lng %></th>
+        <th><%= key.website %></th>
+      </tr>
+
+      <% } %>
+      </tbody>
+
+    </table>
+
+  </body>
+</html>
